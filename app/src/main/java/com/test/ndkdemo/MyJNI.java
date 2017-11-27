@@ -13,10 +13,13 @@ public class MyJNI {
     /**
      * 调用so库方法
      */
-    //调用C输出字符串
+    //输出字符串
     public native String sayHello();
 
-    //调用C输出计算结果
+    //输出 x+y 计算结果
     public native int sum(int x, int y);
+
+    //接收byte数组，输出json信息
+    public native String receiveYUV(byte[] bytes);
 
 }
