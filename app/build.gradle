@@ -13,11 +13,16 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        externalNativeBuild {
-            cmake {
-                cppFlags ""
-                abiFilters 'armeabi','armeabi-v7a'
-            }
+//        externalNativeBuild {
+//            cmake {
+//                cppFlags ""
+//                abiFilters 'armeabi','armeabi-v7a'
+//            }
+//        }
+
+        ndk{
+            moduleName "MyJNI"
+            abiFilters "armeabi","armeabi-v7a"
         }
     }
     buildTypes {
@@ -26,11 +31,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
 }
 
 dependencies {
